@@ -29,7 +29,7 @@ fun Activity.dimensPS(@DimenRes res: Int): Int = ctx.dimensPS(res)
 fun Activity.dimensPO(@DimenRes res: Int): Int = ctx.dimensPO(res)
 
 // dimen to px
-val Int.px: Int get() = KExt.app.dimensPS(this)
+val Int.px: Int get() = KExt.appCtx.dimensPS(this)
 
 // dp to px
 fun dp2Px(ctx: Context, dp: Float): Int {
@@ -37,5 +37,5 @@ fun dp2Px(ctx: Context, dp: Float): Int {
     return (dp * density + 0.5f).toInt()
 }
 
-val Float.dp2px: Int get() = dp2Px(KExt.app, this)
+val Float.dp2px: Int get() = dp2Px(KExt.appCtx, this)
 val Int.dp2px: Int get() = this.toFloat().dp2px

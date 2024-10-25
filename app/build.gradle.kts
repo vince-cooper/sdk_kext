@@ -60,8 +60,10 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     if (providers.gradleProperty("enable.local.debug").get().toBoolean()) {
+        println("enable.local.debug = true")
         implementation(project(":sdk_kext"))
     } else {
+        println("enable.local.debug = false")
         implementation(libs.sdk.kext)
     }
 }
